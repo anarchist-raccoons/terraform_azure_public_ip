@@ -19,4 +19,4 @@ variable "location" {
 
 variable "resource_group" { }
 
-variable "name" { }
+variable "service_name" { }

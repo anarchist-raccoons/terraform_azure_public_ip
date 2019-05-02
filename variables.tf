@@ -16,3 +16,5 @@ variable "location" {
   description = "Location"
   default = "northeurope"
 }
+
+variable "resource_group" { }

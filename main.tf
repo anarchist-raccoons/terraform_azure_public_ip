@@ -29,7 +29,7 @@ resource "azurerm_public_ip" "default" {
   name = "${module.labels.id}"
   location = "${var.location}"
   resource_group_name = "${module.labels.id}"
-  resource_group_name = "MC_${module.labels.id}_${module.labels.id}_${var.location}"
+  resource_group_name = "${var.resource_group}"
   allocation_method   = "Static"
 
   tags = "${module.labels.tags}"

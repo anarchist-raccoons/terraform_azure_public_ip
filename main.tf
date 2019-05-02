@@ -26,7 +26,7 @@ module "labels" {
 
 # Azure Public IP
 resource "azurerm_public_ip" "default" {
-  name = "${var.name}"
+  name = "${var.service_name}"
   location = "${var.location}"
   resource_group_name = "${module.labels.id}"
   resource_group_name = "${var.resource_group}"

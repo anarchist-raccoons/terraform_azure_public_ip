@@ -9,7 +9,7 @@ provider "azurerm" {
 # Labels
 module "labels" {
   source = "devops-workflow/label/local"
-  version = "0.2.1"
+#  version = "0.2.1"
 
   # Required
   environment = "${var.environment}"

@@ -8,21 +8,29 @@ provider "azurerm" {
 
 # Labels
 module "labels" {
-  source = "devops-workflow/label/local"
-  version = "0.2.1"
+#  source = "devops-workflow/label/local"
+#  version = "0.2.1"
 
-  # Required
-  environment = "${var.environment}"
-  name = "${var.name}"
-  # Optional
-  namespace-org = "${var.namespace-org}"
-  organization = "${var.org}"
-  delimiter = "-"
-  owner = "${var.owner}"
-  team = "${var.team}"
-  tags = {
-    Name = "${module.labels.id}"
-  }
+  source = "git::https://github.com/cloudposse/terraform-null-label.git?ref=0.12.2"
+  environment = var.environment
+  name       = var.name
+  namespace  = var.namespace-org
+  delimiter  = "-"
+
+  tags = { Name = module.labels.id }
+
+#  # Required
+#  environment = "${var.environment}"
+#  name = "${var.name}"
+#  # Optional
+#  namespace-org = "${var.namespace-org}"
+#  organization = "${var.org}"
+#  delimiter = "-"
+#  owner = "${var.owner}"
+#  team = "${var.team}"
+#  tags = {
+#    Name = "${module.labels.id}"
+#  }
 }
 
 # Azure Public IP

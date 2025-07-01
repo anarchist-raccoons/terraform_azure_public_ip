@@ -33,6 +33,7 @@ resource "azurerm_public_ip" "default" {
   #resource_group_name = module.labels.id
   resource_group_name = var.resource_group
   allocation_method   = "Static"
+  sku = "Basic"
 
   tags = module.labels.tags
 }
